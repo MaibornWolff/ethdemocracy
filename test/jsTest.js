@@ -8,7 +8,4 @@ contract('EthDemocracy', function() {
 			assert.equal(voters.valueOf(), 0, "Voters wasn't zero");
 		});
 	});
-	it("is always false", function() {
-		return assert.equal(1, 0, "fail");
-	});
 });
