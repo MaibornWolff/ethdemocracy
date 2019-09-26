@@ -96,11 +96,9 @@ contract EthDemocracy is AbstractEthDemocracy {
      * Add an address to the registered voters list
      */
     function addVoter(address _voter) public returns (bool) {
-        if (isVoter(_voter)) { return false; }
 
-        voters.push(_voter);
-        emit VoterAdded(_voter);
-        return true;
+      //TODO Step 1: Implement addVoter
+      return true;
     }
 
     /**
@@ -117,14 +115,9 @@ contract EthDemocracy is AbstractEthDemocracy {
      * choices still have to be set via `addVoteOption()`
      */
     function createElection(string memory _name) public returns (bool success, uint electionId) {
-        string[] memory emptyOptions;
-        electionId = elections.length;
 
-        elections.push(Election(electionId, _name, emptyOptions));
-        for (uint i=0; i<voters.length; i++) {
-            elections[elections.length-1].balance[voters[i]] = 1;
-        }
-        emit ElectionCreated(elections.length - 1);
+        // TODO Step 2: Implement createElection
+        electionId=0;
         success = true;
     }
 
@@ -132,16 +125,8 @@ contract EthDemocracy is AbstractEthDemocracy {
      * Add a single choice to an election. W/o calling this at least twice, the election is meaningless.
      */
     function addVoteOption(uint _electionId, string memory _option) public returns (bool) {
-        require(_electionId < elections.length);
-        bytes32 keccak256Option = keccak256(abi.encodePacked(_option));
 
-        for(uint i=0; i<elections[_electionId].options.length; i++) {
-            if (keccak256(abi.encodePacked(elections[_electionId].options[i])) == keccak256Option) {
-                return false;
-            }
-        }
-        elections[_electionId].options.push(_option);
-        emit VoteOptionAdded(_electionId, _option);
+        // TODO Step 3: Implement addVoteOption
         return true;
     }
 
@@ -166,14 +151,8 @@ contract EthDemocracy is AbstractEthDemocracy {
      * Transfer your votes to another address. The address must be a registered voter
      */
     function transferVotes(uint _electionId, address _to) public returns (bool) {
-        require(_electionId < elections.length);
-        require(isVoter(_to));
 
-        uint amount = getVotes(_electionId, msg.sender);
-
-        elections[_electionId].balance[msg.sender] -= amount;
-        elections[_electionId].balance[_to] += amount;
-        emit VoteTransferred(msg.sender, _to, amount);
+        //TODO Step 4: Implement transferVotes
         return true;
     }
 
