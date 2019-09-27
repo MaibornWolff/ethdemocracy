@@ -21,7 +21,7 @@ $ npm install
 to install all needed dependencies and binaries.
 
 ## Usage
-To develop with the project make sure to have [testrpc](https://github.com/ethereumjs/testrpc) running. It is installed by default and can be started by executing ``./testrpc``.
+To develop with the project make sure to have [ganache-cli](https://github.com/trufflesuite/ganache-cli) running. It is installed by default and can be started by executing `./ganache-cli -d`.
 
 After all packages have installed you can use the [truffle](http://truffleframework.com/) commands to interact with the project:
 - `./truffle compile` will compile smart contracts that have been changed since the last compile.
