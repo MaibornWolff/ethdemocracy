@@ -1,7 +1,8 @@
 # Useful Links
 
 ## Blockchain
- - [TestRPC](https://github.com/ethereumjs/testrpc)
+ - [Ganache](https://www.trufflesuite.com/ganache): In-memory Blockchain for development
+ - [Ganache-cli](https://github.com/trufflesuite/ganache-cli): Command line version of Ganache (useful for CI/CD)
  - [Ethereum Docker](https://github.com/froid1911/ethereum-docker): A docker based `geth` cluster with a mining node
  - [Geth](https://github.com/ethereum/go-ethereum): Official reference client
  - [Parity](https://parity.io/parity.html): Client in Rust
@@ -19,6 +20,9 @@
 
 ## Tools
  - [Metamask](https://metamask.io/): Chrome Plugin to access the Ethereum blockchain
+ - [Solidity Coverage](https://www.npmjs.com/package/solidity-coverage): Coverage reports for smart contracts
+ - [Etherscan](https://etherscan.io): Blockexplorer for Ethereum
+ - [Alethio](https://aleth.io): Blockexplorer for Ethereum
 
 ## CI/CD
  - [Industrializing smart contracts with Truffle](https://www.ekino.com/industrializing-smart-contracts-with-truffle/): CI mit GitLab
